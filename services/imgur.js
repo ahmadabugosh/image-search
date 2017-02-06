@@ -10,5 +10,22 @@ let options = {
     };
 
 
+   function getPics(err, response, body) {
+       if (!err && response.statusCode == 200) {
+         body = body.data.filter(image => {
+           if (!image.is_album) {
+             return image;
+           }
+         }).map(image => {
+           return {
+             url: image.link,
+             snippet: image.title,
+             context: `https://imgur.com/${image.id}`
+           };
+         });
+         resolve(body)
+       }
+     }
+     request(options, getPics);
   });
-};
+ };
