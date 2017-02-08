@@ -1,0 +1,14 @@
+extends layout
+
+block content
+ h1 Ahmad's Image Search API
+ h2 Image Searcher
+ p.red Example Usage
+ code /search/'searchterm'
+ p.red Expected Output is JSON
+ code {"url": "http://Image URL","snippet": "info on query","context": "http://Page URL"}
+ h2 History
+ p.red Example Usage
+ code /latest
+ p.red Expected Output is JSON
+ code {"term": "search terms","when": "time search was made"}
